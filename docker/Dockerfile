@@ -13,4 +13,5 @@ RUN . /opt/ros/kinetic/setup.sh && catkin_make install
 # Clear apt cache.
 RUN apt clean
 
-ENTRYPOINT ["/bin/bash", "-c", "source /rvizweb_ws/install/setup.bash && /bin/bash"]
+# ENTRYPOINT ["/bin/bash", "-c", "source /rvizweb_ws/install/setup.bash && /bin/bash"]
+CMD ["/rvizweb_ws/install/env.sh", "roslaunch", "rvizweb", "rvizweb.launch"]
